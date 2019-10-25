@@ -1,0 +1,23 @@
+{
+  "name": "iterator-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "iterator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeldmyers/iterator-generator-quick-review.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeldmyers/iterator-generator-quick-review/issues"
+  },
+  "homepage": "https://github.com/joeldmyers/iterator-generator-quick-review#readme",
+  "dependencies": {
+    "random-number": "0.0.9"
+  }
+}
