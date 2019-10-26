@@ -21,3 +21,25 @@ const makeCharacter = () => {
 }
 
 makeCharacter();
+
+// custom iterator
+const castOfCharacters = {
+  [Symbol.iterator]: () => {
+    return {
+      next: () => {
+        const enoughCharacters = Math.random() > .9;
+        if (!enoughCharacters) {
+          return {
+            value: makeCharacter(),
+            done: false
+          }
+        }
+        return {done: true}
+      }
+    }
+  }
+}
+
+for (const character of castOfCharacters) {
+  console.log(character);
+}
