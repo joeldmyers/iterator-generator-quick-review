@@ -23,25 +23,44 @@ const makeCharacter = () => {
 makeCharacter();
 
 // custom iterator
-const castOfCharacters = {
-  [Symbol.iterator]: () => {
-    return {
-      next: () => {
-        const enoughCharacters = Math.random() > .9;
-        if (!enoughCharacters) {
-          return {
-            value: makeCharacter(),
-            done: false
-          }
-        }
-        return {done: true}
-      }
-    }
+// const castOfCharacters = {
+//   [Symbol.iterator]: () => {
+//     return {
+//       next: () => {
+//         const enoughCharacters = Math.random() > .9;
+//         if (!enoughCharacters) {
+//           return {
+//             value: makeCharacter(),
+//             done: false
+//           }
+//         }
+//         return {done: true}
+//       }
+//     }
+//   }
+// }
+//
+//
+// for (const character of castOfCharacters) {
+//   console.log(character);
+// }
+
+// the takeaway is that we can create iterators to generate things randomly.
+
+
+// refactoring to be a generator:
+
+
+function* castOfCharacters () {
+  while(true) {
+    const enoughCharacters = Math.random() > .9;
+    if (enoughCharacters) return;
+    yield makeCharacter();
   }
 }
 
-for (const character of castOfCharacters) {
-  console.log(character);
-}
-
-// the takeaway is that we can create iterators to generate things randomly.
+const iterator = castOfCharacters();
+iterator.next();
+iterator.next();
+iterator.next();
+iterator.next();
