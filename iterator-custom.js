@@ -43,3 +43,5 @@ const castOfCharacters = {
 for (const character of castOfCharacters) {
   console.log(character);
 }
+
+// the takeaway is that we can create iterators to generate things randomly.
