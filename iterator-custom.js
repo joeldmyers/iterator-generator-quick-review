@@ -64,3 +64,17 @@ iterator.next();
 iterator.next();
 iterator.next();
 iterator.next();
+
+// These are like pausable functions
+// a simple generator function is like this:
+
+function* makeNames() {
+  yield 'John';
+  yield 'Jane';
+  yield 'Jim';
+}
+const iterator2 = makeNames();
+console.log(iterator2.next());
+console.log(iterator2.next());
+console.log(iterator2.next());
+console.log(iterator2.next());
