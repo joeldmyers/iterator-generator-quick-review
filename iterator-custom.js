@@ -73,6 +73,7 @@ function* makeNames() {
   yield 'Jane';
   yield 'Jim';
 }
+// yield is like a pause / return at that state. 
 const iterator2 = makeNames();
 console.log(iterator2.next());
 console.log(iterator2.next());
